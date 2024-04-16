@@ -1,39 +1,31 @@
-import Link from "next/link";
-import React from "react";
+import LinkHover from "./ui/LinkHover";
 
 const Header = () => {
   return (
-    <header className='absolute top-0 left-0 w-full h-[55%] z-20'>
-      <div className=' bg-foreground pt-10 pb-44'>
-        <div className='flex justify-between max-w-[1280px] mx-auto uppercase'>
+    <header className="absolute top-0 left-0 w-full h-[55%] z-20">
+      <div className=" bg-foreground pt-4 md:pt-8 pb-24 lg:pb-46">
+        <div className="flex justify-between max-w-[1280px] mx-auto uppercase w-10/12 text-sm md:text-base lg:text-lg">
           <div>
             <p>
-              ( Filmfolio - 2024<span className='text-primaryaccent'>©</span>)
+              ( Filmfolio - 2024<span className="text-primaryaccent">©</span>)
             </p>
             <p>Celena Veiga - Copenhagen</p>
           </div>
 
           <nav>
-            <ul className='flex gap-8 transition-all'>
+            <ul className="gap-10 transition-all hidden md:flex">
               <li>
-                <Link href='/' className='hover:text-gray-500'>
-                  Home
-                </Link>
+                <LinkHover linkText="About Me" linkRef="#about" linkTarget="" />
               </li>
               <li>
-                <Link href='/' className='hover:text-gray-500'>
-                  About her
-                </Link>
+                <LinkHover linkText="My Work" linkRef="#work" linkTarget="" />
               </li>
               <li>
-                <Link href='/' className='hover:text-gray-500'>
-                  Her work
-                </Link>
-              </li>
-              <li>
-                <Link href='/' className='hover:text-gray-500'>
-                  Contact her
-                </Link>
+                <LinkHover
+                  linkText="Contact Me"
+                  linkRef="#contact"
+                  linkTarget=""
+                />
               </li>
             </ul>
           </nav>
@@ -41,37 +33,26 @@ const Header = () => {
       </div>
 
       {/* Masked Text Element */}
-      <div className='knockout'>
-        <svg className='knockout-text-container' width='100%' height='100%'>
+      <div className="knockout text-[40px] sm:text-[75px] md:text-[90px] lg:text-[120px] xl:text-[140px] font-bold">
+        <svg className="knockout-text-container" width="100%" height="100%">
           <rect
-            className='knockout-text-bg'
-            width='100%'
-            height='100%'
-            fill='#D9D9D9'
-            x='0'
-            y='0'
-            fill-opacity='1'
-            mask='url(#knockout-text)'
+            className="knockout-text-bg"
+            width="100%"
+            height="100%"
+            fill="#D9D9D9"
+            x="0"
+            y="0"
+            fill-opacity="1"
+            mask="url(#knockout-text)"
           />
 
-          <mask id='knockout-text'>
-            <rect width='100%' height='100%' fill='#fff' x='0' y='0' />
-            <text
-              x='28%'
-              y='70%'
-              fill='#000'
-              text-anchor='middle'
-              className='text-[164px] font-bold'
-            >
+          <mask id="knockout-text">
+            <rect width="100%" height="100%" fill="#fff" x="0" y="0" />
+            dib
+            <text x="28%" y="70%" fill="#000" text-anchor="middle">
               Celena
             </text>
-            <text
-              x='77%'
-              y='70%'
-              fill='#000'
-              text-anchor='middle'
-              className='text-[164px] font-bold'
-            >
+            <text x="77%" y="70%" fill="#000" text-anchor="middle">
               Veiga
             </text>
           </mask>

@@ -22,7 +22,7 @@ const BackgroundTrans = ({ children }) => {
   // Attempt to measure scroll speed to adjust the smoothness dynamically
   useEffect(() => {
     const handleScroll = () => {
-      const currentScroll = window.pageYOffset;
+      const currentScroll = window.scrollY;
       const currentTime = Date.now();
       const speed = (currentScroll - lastScroll) / (currentTime - lastTime);
 

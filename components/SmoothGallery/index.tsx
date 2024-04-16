@@ -1,13 +1,5 @@
 "use client";
 import styles from "./styles.module.scss";
-import Picture1 from "../../public/BTS/bg-billeder-5.jpg";
-import Picture2 from "../../public/BTS/bg-billeder-1.jpg";
-import Picture3 from "../../public/BTS/bg-billeder-2.jpg";
-import Picture4 from "../../public/BTS/bg-billeder-3.jpg";
-import Picture5 from "../../public/BTS/bg-billeder-4.jpg";
-import Picture6 from "../../public/BTS/bg-billeder-5.jpg";
-import Picture7 from "../../public/BTS/bg-billeder-6.jpg";
-import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 
@@ -32,31 +24,31 @@ export default function Index() {
 
   const pictures = [
     {
-      src: Picture1,
+      src: "./BTS/bg-billeder-2.png",
       scale: scale4,
     },
     {
-      src: Picture2,
+      src: "./BTS/bg-billeder-7.png",
       scale: scale5,
     },
     {
-      src: Picture3,
+      src: "./BTS/bg-billeder-1.png",
       scale: scale6,
     },
     {
-      src: Picture4,
+      src: "./BTS/bg-billeder-13.png",
       scale: scale5,
     },
     {
-      src: Picture5,
+      src: "./BTS/gallery-2.png",
       scale: scale6,
     },
     {
-      src: Picture6,
+      src: "./BTS/bg-billeder-6.png",
       scale: scale8,
     },
     {
-      src: Picture7,
+      src: "./BTS/gallery-3.png",
       scale: scale9,
     },
   ];
@@ -69,7 +61,12 @@ export default function Index() {
             return (
               <motion.div key={index} style={{ scale }} className={styles.el}>
                 <div className={styles.imageContainer}>
-                  <Image src={src} fill alt='image' placeholder='blur' />
+                  <img
+                    src={src}
+                    alt="image"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="inset-0 bg-background absolute opacity-20"></div>
                 </div>
               </motion.div>
             );

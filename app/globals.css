@@ -78,6 +78,11 @@
   }
 }
 
+::selection {
+  background-color: #e15800;
+  color: white;
+}
+
 .knockout {
   height: 25vh;
   width: 100%;
