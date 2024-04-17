@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 interface LinkRotateProps {
   linkText: string;
@@ -19,11 +18,13 @@ const LinkRotate: React.FC<LinkRotateProps> = ({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Link
+    <a
       href={linkRef}
       className="inline-block overflow-hidden mt-16 lg:mt-20"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <div className="flex">
         {linkText} &nbsp;
@@ -74,7 +75,7 @@ const LinkRotate: React.FC<LinkRotateProps> = ({
           transition={{ duration: 0.2, ease: "easeInOut" }}
         ></motion.div>
       </motion.div>
-    </Link>
+    </a>
   );
 };
 

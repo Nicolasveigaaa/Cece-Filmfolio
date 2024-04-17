@@ -30,7 +30,8 @@
     "components/About.tsx",
     "components/ui/TextReveal/index.jsx",
     "components/ui/BackgroundTrans.jsx",
-    "components/HorizontalScroll.jsx"
+    "components/HorizontalScroll.jsx",
+    "components/SmoothScrolling.jsx"
   ],
   "exclude": ["node_modules"]
 }

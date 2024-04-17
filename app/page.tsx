@@ -23,7 +23,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full h-full overflow-auto;">
+    <main className="w-full h-full">
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
@@ -51,7 +51,7 @@ export default function Home() {
       </section>
 
       <section
-        className="h-[450vh] sm:h-[400vh] md:h-[450vh] relative"
+        className="h-[450vh] sm:h-[410vh] md:h-[485vh] lg:h-[460vh] relative"
         id="about"
       >
         {/* About Her Section */}
@@ -75,35 +75,39 @@ export default function Home() {
               <div className="lg:w-8/12">
                 <p
                   className="text-xl
-                sm:text-2xl md:text-4xl font-semibold pb-16"
+                sm:text-2xl md:text-4xl lg:text-2xl xl:text-3xl 2xl:text-4xl  font-semibold pb-16"
                 >
-                  I am an ambitious, passionate, and creative Storyteller,
-                  Director, Videojournalist, and Screenwriter from Copenhagen.
-                  Currently, I am studying TV and Media Production at the Danish
-                  School of Media and Journalism in Copenhagen.
+                  I am an ambitious, passionate, curious and creative
+                  Storyteller, Director, Videojournalist and Screenwriter from
+                  Copenhagen. Currently, I am studying TV and Media Production
+                  at the Danish School of Media and journalism in Copenhagen.
                 </p>
 
-                <div className="flex text-sm gap-4 ">
-                  <h4 className="w-5/12 font-semibold md:w-4/12 text-base">
+                <div className="flex text-sm gap-4 lg:gap-6 ">
+                  <h4 className="w-3/12 sm:w-4/12 lg:w-2/12 xl:w-4/12 font-semibold text-base">
                     Why choose me?
                   </h4>
-                  <div className="w-7/12 md:w-8/12">
+                  <div className="w-8/12 sm:w-8/12 md:w-8/12 lg:w-10/12 xl:w-8/12">
                     <div className="flex flex-col gap-10">
                       <div className="flex flex-col md:flex-row gap-10 lg:gap-6 justify-between">
                         <p>
-                          - I am an ambitious, passionate, and creative
-                          Storyteller, Director, Videojournalist, and
-                          Screenwriter from Copenhagen. Currently, I am studying
-                          TV and Media Production at the Danish School of Media
-                          and Journalism in Copenhagen.
+                          - Through visual storytelling that appeals to
+                          universal emotions, I aspire to unite people and erase
+                          feelings of loneliness. My mission is to create
+                          authentic, inclusive, and sensuous stories that
+                          celebrate diversity, and challenge the norm, leaving a
+                          positive, lasting impact.
                         </p>
 
                         <p>
-                          I am an ambitious, passionate, and creative
-                          Storyteller, Director, Videojournalist, and
-                          Screenwriter from Copenhagen. Currently, I am studying
-                          TV and Media Production at the Danish School of Media
-                          and Journalism in Copenhagen.
+                          I am a visually-minded storyteller with excellent
+                          communication skills and a good sense for connecting
+                          with people on a deeper level. Always being eager to
+                          improve and develop, I am certainly not afraid to dig
+                          deep and search for the new, uncomfortable, beautiful
+                          and sometimes hurtful places with my work, as I
+                          strongly believe these places to be the origin of the
+                          greatest stories.
                         </p>
                       </div>
                     </div>
@@ -113,7 +117,7 @@ export default function Home() {
                         linkText="Download"
                         linkTextTwo="CV"
                         linkTextThree=""
-                        linkRef="#"
+                        linkRef="/downloadable/Celena-Veiga-CV.pdf"
                       />
                     </div>
                   </div>
