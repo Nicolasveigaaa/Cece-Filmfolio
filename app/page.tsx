@@ -51,7 +51,7 @@ export default function Home() {
       </section>
 
       <section
-        className="h-[450vh] sm:h-[410vh] md:h-[480vh] lg:h-[460vh] relative"
+        className="h-[460vh] sm:h-[410vh] md:h-[480vh] lg:h-[460vh] relative"
         id="about"
       >
         {/* About Her Section */}
