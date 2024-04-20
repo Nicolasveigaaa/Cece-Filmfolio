@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 const ScrollUp = () => {
   const controls = useAnimation();
   const [isHovered, setIsHovered] = useState(false);
+
   useEffect(() => {
     if (isHovered) {
       controls.start({
@@ -37,10 +38,22 @@ const ScrollUp = () => {
     }
   }, [isHovered, controls]);
 
+  // Handler to manage smooth scroll to the top
+  const handleScrollToTop = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <motion.a
       href="#"
       className="inline-flex flex-col items-center justify-center gap-2 rotate-[-90deg] whitespace-nowrap"
+      onClick={handleScrollToTop}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

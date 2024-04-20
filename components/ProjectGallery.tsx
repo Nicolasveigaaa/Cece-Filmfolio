@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import LinkRotate from "./ui/LinkRotate";
 
 type CardType = {
@@ -53,7 +53,7 @@ const cards: CardType[] = [
     video: "/videoer/bg-video.mp4",
     title: "I Vor Dødstime",
     thumbnail: "/thumbnail/dødstime.png",
-    url: "https://www.youtube.com/watch?v=isBMCkc_AzY",
+    url: "https://www.youtube.com/watch?v=3SLHMSmBB_w",
     kategoriOgDato: "Fiction • Coming Soon",
     description: `"In The Hour Of Death" follows Eva on her way to her sister Ester’s funeral, as she is triggered by memories from her childhood that reveal why she left her beloved sick sister behind. Raised in isolation under strict rules and unwavering faith, Eva's beliefs are tested as her older sister Ester becomes ill and loses her faith in God. Eva is faced with deep fear as she contemplates the possibility of not reuniting with Ester in heaven when they die. Eva's journey unveils the complexities between doubt and devotion to faith. "In The Hour Of Death" delves into the fear of losing loved ones and the uncertainty of afterlife, illustrating how facing death can deepen our appreciation for life and reshape our beliefs.`,
     stilbilede: "/stilbillede/dødstime.png",
@@ -87,8 +87,15 @@ const ProjectGallery = () => {
   const [activeCard, setActiveCard] = useState<CardType | null>(null);
 
   const callSlideIn = (card?: CardType) => {
-    setIsActive(!isActive);
-    setActiveCard(card || null);
+    if (card) {
+      setActiveCard(card);
+      setIsActive(true);
+    } else {
+      setTimeout(() => {
+        setIsActive(false);
+      }, 400); // Duration should match the animation exit duration
+      setActiveCard(null);
+    }
   };
 
   return (
@@ -105,13 +112,15 @@ const ProjectGallery = () => {
           />
         ))}
       </div>
-      {isActive && activeCard && (
-        <FilmInfo
-          card={activeCard}
-          isActive={isActive}
-          callSlideIn={() => callSlideIn()}
-        />
-      )}
+      <AnimatePresence>
+        {isActive && activeCard && (
+          <FilmInfo
+            card={activeCard}
+            isActive={isActive}
+            callSlideIn={() => callSlideIn()}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
@@ -181,9 +190,19 @@ const FilmInfo = ({
   isActive: boolean;
   callSlideIn: () => void;
 }) => {
+  // Handle disabling background scrolling when the drawer is active
+  useEffect(() => {
+    const handleBodyScroll = isActive ? "hidden" : "auto";
+    document.body.style.overflow = handleBodyScroll;
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isActive]);
+
   return (
-    <div className="fixed inset-0 z-20">
-      {/* slide overlay */}
+    <div className="fixed inset-0 z-20 overflow-hidden">
+      {/* Slide Overlay */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={isActive ? { opacity: 0.5 } : { opacity: 0 }}
@@ -193,24 +212,27 @@ const FilmInfo = ({
           type: "tween",
         }}
         className="absolute w-full h-full bg-background top-0 left-0"
+        onClick={callSlideIn}
       ></motion.div>
 
-      {/* slide card */}
+      {/* Slide Card (Drawer) */}
       <motion.div
-        className="fixed w-full md:w-2/3 lg:w-1/2 xl:w-[40%] 2xl:w-1/3 h-screen z-30 inset-0 bg-foreground text-background py-10 px-12 overflow-hidden"
+        className="fixed w-full md:w-2/3 lg:w-1/2 xl:w-[40%] 2xl:w-1/3 max-h-screen z-30 inset-0 bg-foreground text-background py-10 px-12 overflow-y-auto"
         initial={{ x: "-100%" }}
-        animate={isActive ? { x: "0%" } : { x: "-100%" }}
+        animate={{ x: "0%" }}
+        exit={{ x: "-100%" }}
         transition={{
           duration: 0.4,
           ease: [0.6, 0.01, 0.05, 0.95],
           type: "tween",
         }}
+        onWheel={(e) => e.stopPropagation()} // Prevent scrolling the background on wheel events
       >
-        {/* close button */}
         <motion.button
           onClick={callSlideIn}
           whileHover={{ rotate: 180, scale: 1.2 }}
-          whileTap={{ rotate: 0, scale: 1 }}
+          whileTap={{ scale: 0.9 }}
+          initial={{ rotate: 0, scale: 1 }}
           className="absolute top-8 right-12 inline-block cursor-pointer p-2"
           style={{ width: "30px", height: "30px" }}
         >
@@ -236,14 +258,14 @@ const FilmInfo = ({
           ></div>
         </motion.button>
 
-        <div className="flex flex-col gap-6 md:gap-0">
-          <div>
+        {/* Content Container */}
+        <div className="flex flex-col gap-2 overflow-hidden">
+          <div className="overflow-hidden">
             <p className="text-sm font-light mt-6">{card.kategoriOgDato}</p>
             <h3 className="font-semibold text-lg pb-2">{card.title}</h3>
             <div className="h-[2px] w-full bg-background mb-6"></div>
           </div>
-
-          <div className="w-full h-[30vh] relative hidden sm:block md:mb-6">
+          <div className="w-full h-[30vh] relative sm:block mb-5">
             <img
               src={card.stilbilede}
               alt="Project stills"
@@ -251,9 +273,7 @@ const FilmInfo = ({
             />
           </div>
 
-          <p className="text-base">{card.description}</p>
-
-          <div className="flex justify-center">
+          <div className="mb-4">
             <LinkRotate
               linkText="Experience the"
               linkTextTwo="work"
@@ -261,6 +281,10 @@ const FilmInfo = ({
               linkRef={card.url}
             />
           </div>
+
+          <p className="text-base overflow-auto no-scrollbar">
+            {card.description}
+          </p>
         </div>
       </motion.div>
     </div>

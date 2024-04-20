@@ -2,7 +2,7 @@ import LinkHover from "./ui/LinkHover";
 
 const Header = () => {
   return (
-    <header className="absolute top-0 left-0 w-full h-[55%] z-20">
+    <header className="absolute top-0 left-0 w-full h-[55%] z-[19]">
       <div className=" bg-foreground pt-4 md:pt-8 pb-24 lg:pb-46">
         <div className="flex justify-between max-w-[1280px] mx-auto uppercase w-10/12 text-sm md:text-base lg:text-lg">
           <div>

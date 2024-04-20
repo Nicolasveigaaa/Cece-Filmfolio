@@ -29,7 +29,7 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="h-[150vh] sm:h-[200vh] relative w-full">
+      <section className="h-[150vh] sm:h-[200vh] relative w-full" id="home">
         <div className="sticky inset-0 w-full h-[100vh]">
           <video
             autoPlay
@@ -51,7 +51,7 @@ export default function Home() {
       </section>
 
       <section
-        className="h-[450vh] sm:h-[410vh] md:h-[485vh] lg:h-[460vh] relative"
+        className="h-[450vh] sm:h-[410vh] md:h-[480vh] lg:h-[460vh] relative"
         id="about"
       >
         {/* About Her Section */}
@@ -77,10 +77,10 @@ export default function Home() {
                   className="text-xl
                 sm:text-2xl md:text-4xl lg:text-2xl xl:text-3xl 2xl:text-4xl  font-semibold pb-16"
                 >
-                  I am an ambitious, passionate, curious and creative
+                  I am an ambitious, passionate, curious and creative Danish
                   Storyteller, Director, Videojournalist and Screenwriter from
                   Copenhagen. Currently, I am studying TV and Media Production
-                  at the Danish School of Media and journalism in Copenhagen.
+                  at the Danish School of Media and Journalism in Copenhagen.
                 </p>
 
                 <div className="flex text-sm gap-4 lg:gap-6 ">
@@ -94,8 +94,8 @@ export default function Home() {
                           - Through visual storytelling that appeals to
                           universal emotions, I aspire to unite people and erase
                           feelings of loneliness. My mission is to create
-                          authentic, inclusive, and sensuous stories that
-                          celebrate diversity, and challenge the norm, leaving a
+                          authentic, inclusive and sensuous stories that
+                          celebrate diversity and challenge the norm, leaving a
                           positive, lasting impact.
                         </p>
 
@@ -104,15 +104,15 @@ export default function Home() {
                           communication skills and a good sense for connecting
                           with people on a deeper level. Always being eager to
                           improve and develop, I am certainly not afraid to dig
-                          deep and search for the new, uncomfortable, beautiful
-                          and sometimes hurtful places with my work, as I
-                          strongly believe these places to be the origin of the
-                          greatest stories.
+                          deep and search for new, uncomfortable, beautiful and
+                          sometimes hurtful places with my work, as I strongly
+                          believe these places to be the origin of the greatest
+                          stories.
                         </p>
                       </div>
                     </div>
 
-                    <div className="text-base">
+                    <div className="text-base mt-10 2xl:mt-20">
                       <LinkRotate
                         linkText="Download"
                         linkTextTwo="CV"
@@ -130,7 +130,7 @@ export default function Home() {
         {/* Previous Work Section */}
         <div
           id="work"
-          className="absolute bottom-0 w-full bg-background z-10 text-white overflow-x-hidden"
+          className="absolute bottom-0 w-full bg-background z-20 text-white overflow-x-hidden"
         >
           <ProjectGallery />
         </div>

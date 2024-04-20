@@ -3,7 +3,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// Define the component with proper TypeScript prop types
 interface LinkHoverProps {
   linkText: string;
   linkRef: string;
@@ -17,12 +16,31 @@ const LinkHover: React.FC<LinkHoverProps> = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    if (linkRef.startsWith("#")) {
+      // Check if it is an anchor link
+      e.preventDefault(); // Prevent default link behavior
+      const id = linkRef.substring(1); // Remove the '#' to get the ID
+      const element = document.getElementById(id);
+      if (element) {
+        const top = element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: top, // Scroll to the element
+          behavior: "smooth", // Make the scroll smooth
+        });
+      }
+    }
+  };
+
   return (
     <Link
       href={linkRef}
       target={linkTarget}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleAnchorClick} // Attach the custom click handler
       className="inline-block"
     >
       <motion.div className="relative flex flex-col overflow-hidden">

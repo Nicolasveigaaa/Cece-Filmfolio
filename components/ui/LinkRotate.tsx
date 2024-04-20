@@ -20,7 +20,7 @@ const LinkRotate: React.FC<LinkRotateProps> = ({
   return (
     <a
       href={linkRef}
-      className="inline-block overflow-hidden mt-16 lg:mt-20"
+      className="inline-block overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       rel="noopener noreferrer"

@@ -13,7 +13,7 @@ const Footer = () => {
     >
       <div className="hidden md:block h-[2px] bg-background w-full"></div>
 
-      <div className="text-center lg:text-xl md:text-lg text-base mb-6">
+      <div className="text-center lg:text-xl md:text-lg text-base mb-6 mt-0 md:mt-10 xl:mt-16">
         <LinkRotate
           linkText="Get in"
           linkTextTwo="touch"
@@ -37,7 +37,7 @@ const Footer = () => {
 
           <ul className="flex flex-col gap-4">
             <li>
-              <LinkHover linkText="Home" linkRef="#" linkTarget="" />
+              <LinkHover linkText="Home" linkRef="#home" linkTarget="" />
             </li>
             <li>
               <LinkHover linkText="About Me" linkRef="#about" linkTarget="" />

@@ -64,6 +64,21 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
+
+  /* Hide scrollbars */
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+  /* Works on Firefox */
+  html {
+    scrollbar-width: none; /* Firefox 64 */
+  }
+  /* Works on IE and Edge */
+  body {
+    -ms-overflow-style: none; /* IE and Edge */
+  }
 }
 
 @layer base {

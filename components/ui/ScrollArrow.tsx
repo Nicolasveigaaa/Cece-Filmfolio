@@ -1,8 +1,13 @@
 "use client";
-import { easeInOut, motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const ScrollArrow = ({}) => {
+// Since this component does not use props, we can omit the props interface or keep it empty if we might extend it later
+interface ScrollArrowProps {
+  // Future props can be added here
+}
+
+const ScrollArrow: React.FC<ScrollArrowProps> = () => {
   const controls = useAnimation();
   const opacityControls = useAnimation();
 
@@ -53,12 +58,27 @@ const ScrollArrow = ({}) => {
     }
   }, [isHovered, controls]);
 
+  const handleClick = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event.preventDefault(); // Ensure default behavior is prevented
+    const element = document.getElementById("about");
+    if (element) {
+      const top = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: top,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <motion.a
       href="#about"
       className="items-start flex flex-col justify-center rotate-90 cursor-pointer"
       initial={{ opacity: 1 }}
       animate={opacityControls}
+      onClick={handleClick}
       transition={{ duration: 0.2 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
