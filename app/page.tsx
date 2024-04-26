@@ -40,7 +40,7 @@ export default function Home() {
             webkit-playsinline="true"
             playsInline
           >
-            <source src="/videoer/bg-video.mp4" type="video/mp4" />
+            <source src="/videoer/bg-video.webm" type="video/webm" />
           </video>
           <div className="absolute bg-background inset-0 w-full h-full opacity-45"></div>
 
@@ -66,7 +66,7 @@ export default function Home() {
             <div className="flex flex-col lg:flex-row justify-between gap-10 md:gap-20">
               <div className="w-full h-[60vh] rounded-xl relative lg:w-4/12">
                 <img
-                  src="/billeder/portrait.png"
+                  src="/billeder/portrait.webp"
                   alt="portrait of Celena Veiga"
                   className="object-cover rounded-xl absolute inset-0 w-full h-full"
                 />

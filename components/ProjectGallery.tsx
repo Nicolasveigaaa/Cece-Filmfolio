@@ -17,68 +17,68 @@ type CardType = {
 const cards: CardType[] = [
   {
     id: 4,
-    video: "/videoer/echo.mp4",
+    video: "/videoer/echo.webm",
     title: "ECHO prøver naturterapi",
-    thumbnail: "/thumbnail/echo.png",
+    thumbnail: "/thumbnail/echo.webp",
     url: "https://www.youtube.com/watch?v=B1F20-hF0X8",
     kategoriOgDato: "Non-fiction • 2024",
     description:
       "The first episode of a documentary series, that explores nature therapy as an alternative treatment for young people with mental health issues.",
-    stilbilede: "/stilbillede/natur.png",
+    stilbilede: "/stilbillede/natur.webp",
   },
   {
     id: 5,
-    video: "/videoer/medicin.mp4",
+    video: "/videoer/medicin.webm",
     title: "Fremtidens medicin",
-    thumbnail: "/thumbnail/medicin.png",
+    thumbnail: "/thumbnail/medicin.webp",
     url: "https://www.youtube.com/watch?v=G9GXI_YcdvY",
     kategoriOgDato: "Non-fiction • 2023",
     description:
       "Natalie is a healer, who holds space for others to release their trauma. When cancer confronted her, she changed her life and redefined her purpose. She aspires to do something impactful with the life she has been given. Can spirituality become the medicine of the future?",
-    stilbilede: "/stilbillede/medicin.png",
+    stilbilede: "/stilbillede/medicin.webp",
   },
   {
     id: 6,
-    video: "/videoer/kvindekrop.mp4",
+    video: "/videoer/kvindekrop.webm",
     title: "Fanget i min kvindekrop",
-    thumbnail: "/thumbnail/kvindekrop.png",
+    thumbnail: "/thumbnail/kvindekrop.webp",
     url: "https://www.youtube.com/watch?v=ICK0Y6gGdQg ",
     kategoriOgDato: "Non-fiction • 2023",
     description:
       "Ditte decided to be sterilized, driven by her lifelong certainty of not wanting children. She articulates feeling confined by societal expectations but finds liberation in reclaiming control over her body and destiny.",
-    stilbilede: "/stilbillede/kvindekrop.png",
+    stilbilede: "/stilbillede/kvindekrop.webp",
   },
   {
     id: 1,
-    video: "/videoer/bg-video.mp4",
+    video: "/videoer/bg-video.webm",
     title: "I Vor Dødstime",
-    thumbnail: "/thumbnail/dødstime.png",
+    thumbnail: "/thumbnail/dødstime.webp",
     url: "https://www.youtube.com/watch?v=3SLHMSmBB_w",
     kategoriOgDato: "Fiction • Coming Soon",
     description: `"In The Hour Of Death" follows Eva on her way to her sister Ester’s funeral, as she is triggered by memories from her childhood that reveal why she left her beloved sick sister behind. Raised in isolation under strict rules and unwavering faith, Eva's beliefs are tested as her older sister Ester becomes ill and loses her faith in God. Eva is faced with deep fear as she contemplates the possibility of not reuniting with Ester in heaven when they die. Eva's journey unveils the complexities between doubt and devotion to faith. "In The Hour Of Death" delves into the fear of losing loved ones and the uncertainty of afterlife, illustrating how facing death can deepen our appreciation for life and reshape our beliefs.`,
-    stilbilede: "/stilbillede/dødstime.png",
+    stilbilede: "/stilbillede/dødstime.webp",
   },
   {
     id: 3,
-    video: "/videoer/smil.mp4",
+    video: "/videoer/smil.webm",
     title: "Smil Prinsesse",
-    thumbnail: "/thumbnail/prinsesse.png",
+    thumbnail: "/thumbnail/prinsesse.webp",
     url: "https://www.ekkofilm.dk/shortlist/film/smil-prinsesse/",
     kategoriOgDato: "Fiction • 2022",
     description:
       "Milena is training for the Danish boxing championships. A few days before an important match, her long-lost father suddenly returns home after ten years. He wants to be a part of the family again, and Milena's world is turned upside down.",
-    stilbilede: "/stilbillede/prinsesse.png",
+    stilbilede: "/stilbillede/prinsesse.webp",
   },
   {
     id: 2,
-    video: "/videoer/rød-sol.mp4",
+    video: "/videoer/rød-sol.webm",
     title: "Solen er så rød mor",
-    thumbnail: "/thumbnail/rødsol.png",
+    thumbnail: "/thumbnail/rødsol.webp",
     url: "https://www.youtube.com/watch?v=PlfcZpQwqq4",
     kategoriOgDato: "Fiction • 2021",
     description:
       "Max and Mona, unable to have kids, adopt 8-year-old Noa. Their joy turns to terror when they realize Noa didn't move in with them alone.",
-    stilbilede: "/stilbillede/rødsol.png",
+    stilbilede: "/stilbillede/rødsol.webp",
   },
 ];
 
@@ -147,37 +147,39 @@ const Card = ({
   }, [isHovered]);
 
   return (
-    <div
+    <button
+      className="w-full mb-10"
       onClick={callSlideIn}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="transition-all cursor-pointer relative max-w-[1280px] h-[30vh] md:h-[40vh] flex mx-auto mb-10"
     >
-      <motion.div
-        initial={{ opacity: 1 }}
-        animate={{ opacity: isHovered ? 0 : 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <img
-          src={card.thumbnail}
-          alt="Project thumbnail"
-          className="object-cover rounded-xl absolute inset-0 w-full h-full"
-        />
-      </motion.div>
-      <video
-        ref={videoRef}
-        muted
-        loop
-        className="object-cover w-full rounded-xl"
-      >
-        <source src={card.video} type="video/mp4" />
-      </video>
-      <div className="absolute bg-background inset-0 w-full h-full opacity-30"></div>
-      <div className="w-full absolute bottom-0 p-8 uppercase font-semibold md:text-lg flex flex-col sm:flex-row justify-between text-white">
-        <p>{card.title}</p>
-        <p>{card.kategoriOgDato}</p>
+      <div className="transition-all cursor-pointer relative max-w-[1280px] h-[30vh] md:h-[40vh] flex mx-auto">
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{ opacity: isHovered ? 0 : 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <img
+            src={card.thumbnail}
+            alt="Project thumbnail"
+            className="object-cover rounded-xl absolute inset-0 w-full h-full"
+          />
+        </motion.div>
+        <video
+          ref={videoRef}
+          muted
+          loop
+          className="object-cover w-full rounded-xl"
+        >
+          <source src={card.video} type="video/webm" />
+        </video>
+        <div className="absolute bg-background inset-0 w-full h-full opacity-30"></div>
+        <div className="w-full absolute bottom-0 p-8 uppercase font-semibold md:text-lg flex flex-col sm:flex-row justify-between text-white">
+          <p>{card.title}</p>
+          <p>{card.kategoriOgDato}</p>
+        </div>
       </div>
-    </div>
+    </button>
   );
 };
 
@@ -226,7 +228,7 @@ const FilmInfo = ({
           ease: [0.6, 0.01, 0.05, 0.95],
           type: "tween",
         }}
-        onWheel={(e) => e.stopPropagation()} // Prevent scrolling the background on wheel events
+        onWheel={(e) => e.stopPropagation()}
       >
         <motion.button
           onClick={callSlideIn}

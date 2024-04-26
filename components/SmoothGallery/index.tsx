@@ -24,31 +24,31 @@ export default function Index() {
 
   const pictures = [
     {
-      src: "./BTS/bg-billeder-2.png",
+      src: "./BTS/bg-billeder-2.webp",
       scale: scale4,
     },
     {
-      src: "./BTS/bg-billeder-7.png",
+      src: "./BTS/bg-billeder-7.webp",
       scale: scale5,
     },
     {
-      src: "./BTS/bg-billeder-1.png",
+      src: "./BTS/bg-billeder-1.webp",
       scale: scale6,
     },
     {
-      src: "./BTS/bg-billeder-13.png",
+      src: "./BTS/bg-billeder-13.webp",
       scale: scale5,
     },
     {
-      src: "./BTS/gallery-2.png",
+      src: "./BTS/gallery-2.webp",
       scale: scale6,
     },
     {
-      src: "./BTS/bg-billeder-6.png",
+      src: "./BTS/bg-billeder-6.webp",
       scale: scale8,
     },
     {
-      src: "./BTS/gallery-3.png",
+      src: "./BTS/gallery-3.webp",
       scale: scale9,
     },
   ];

@@ -13,6 +13,12 @@ export const metadata: Metadata = {
     "A film gallery showing some of the danish filminstructor Celena Veiga's previous Projects.",
 };
 
+// SEO Optimization
+<meta
+  name="keywords"
+  content="Filmdirector, Screenwriter, Storyteller, Celena, Celena Veiga, Veiga, Danish Filmdirector, Videojournalist, Danish Screenwriter, Danish Storyteller, Copenhagen, Celena Faustino Sousa Veiga"
+/>;
+
 export default function RootLayout({
   children,
 }: Readonly<{
