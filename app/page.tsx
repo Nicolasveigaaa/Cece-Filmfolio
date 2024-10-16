@@ -23,59 +23,59 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full h-full">
-      <AnimatePresence mode="wait">
+    <main className='w-full h-full'>
+      <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="h-[150vh] sm:h-[200vh] relative w-full" id="home">
-        <div className="sticky inset-0 w-full h-[100vh]">
+      <section className='h-[150vh] sm:h-[200vh] relative w-full' id='home'>
+        <div className='sticky inset-0 w-full h-[100vh]'>
           <video
             autoPlay
             muted
             loop
-            preload="auto"
-            className="w-full h-full object-cover"
-            webkit-playsinline="true"
+            preload='auto'
+            className='w-full h-full object-cover'
+            webkit-playsinline='true'
             playsInline
           >
-            <source src="/videoer/bg-video.webm" type="video/webm" />
+            <source src='/videoer/bg-video.webm' type='video/webm' />
           </video>
-          <div className="absolute bg-background inset-0 w-full h-full opacity-45"></div>
+          <div className='absolute bg-background inset-0 w-full h-full opacity-45'></div>
 
-          <div className="absolute left-0 md:left-[85%] bottom-32 sm:bottom-24 text-white">
+          <div className='absolute left-0 md:left-[85%] bottom-32 sm:bottom-24 text-white'>
             <ScrollArrow />
           </div>
         </div>
       </section>
 
       <section
-        className="h-[460vh] sm:h-[410vh] md:h-[480vh] lg:h-[460vh] relative"
-        id="about"
+        className='h-[575vh] sm:h-[530vh] md:h-[610vh] lg:h-[600vh] relative'
+        id='about'
       >
         {/* About Her Section */}
-        <div className="sticky overflow-hidden h-full lg:h-screen top-0">
-          <div className="max-w-[1280px] mx-auto mt-24 w-10/12 md:px-2">
-            <div className="w-5/12 relative">
-              <h2 className="font-light uppercase text-lg w-full pb-10">
-                Get to <span className="text-primaryaccent">know</span> me
+        <div className='sticky overflow-hidden h-full lg:h-screen top-0'>
+          <div className='max-w-[1280px] mx-auto mt-24 w-10/12 md:px-2'>
+            <div className='w-5/12 relative'>
+              <h2 className='font-light uppercase text-lg w-full pb-10'>
+                Get to <span className='text-primaryaccent'>know</span> me
               </h2>
             </div>
 
-            <div className="flex flex-col lg:flex-row justify-between gap-10 md:gap-20">
-              <div className="w-full h-[60vh] rounded-xl relative lg:w-4/12">
+            <div className='flex flex-col lg:flex-row justify-between gap-10 md:gap-20'>
+              <div className='w-full h-[60vh] rounded-xl relative lg:w-4/12'>
                 <img
-                  src="/billeder/portrait.webp"
-                  alt="portrait of Celena Veiga"
-                  className="object-cover rounded-xl absolute inset-0 w-full h-full"
+                  src='/billeder/portrait.webp'
+                  alt='portrait of Celena Veiga'
+                  className='object-cover rounded-xl absolute inset-0 w-full h-full'
                 />
               </div>
 
-              <div className="lg:w-8/12">
+              <div className='lg:w-8/12'>
                 <p
-                  className="text-xl
-                sm:text-2xl md:text-4xl lg:text-2xl xl:text-3xl 2xl:text-4xl  font-semibold pb-16"
+                  className='text-xl
+                sm:text-2xl md:text-4xl lg:text-2xl xl:text-3xl 2xl:text-4xl  font-semibold pb-16'
                 >
                   I am an ambitious, passionate, curious and creative Danish
                   Storyteller, Director, Videojournalist and Screenwriter from
@@ -83,13 +83,13 @@ export default function Home() {
                   at the Danish School of Media and Journalism in Copenhagen.
                 </p>
 
-                <div className="flex text-sm gap-4 lg:gap-6 ">
-                  <h4 className="w-3/12 sm:w-4/12 lg:w-2/12 xl:w-4/12 font-semibold text-base">
-                    Why choose me?
+                <div className='flex text-sm gap-4 lg:gap-6 '>
+                  <h4 className='w-3/12 sm:w-4/12 lg:w-2/12 xl:w-4/12 font-semibold text-base'>
+                    Why work with me?
                   </h4>
-                  <div className="w-8/12 sm:w-8/12 md:w-8/12 lg:w-10/12 xl:w-8/12">
-                    <div className="flex flex-col gap-10">
-                      <div className="flex flex-col md:flex-row gap-10 lg:gap-6 justify-between">
+                  <div className='w-8/12 sm:w-8/12 md:w-8/12 lg:w-10/12 xl:w-8/12'>
+                    <div className='flex flex-col gap-10'>
+                      <div className='flex flex-col md:flex-row gap-10 lg:gap-6 justify-between'>
                         <p>
                           - Through visual storytelling that appeals to
                           universal emotions, I aspire to unite people and erase
@@ -112,12 +112,12 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="text-base mt-10 2xl:mt-20">
+                    <div className='text-base mt-10 2xl:mt-20'>
                       <LinkRotate
-                        linkText="Download"
-                        linkTextTwo="CV"
-                        linkTextThree=""
-                        linkRef="/downloadable/Celena-Veiga-CV.pdf"
+                        linkText='Download'
+                        linkTextTwo='CV'
+                        linkTextThree=''
+                        linkRef='/downloadable/Celena-Veiga-CV.pdf'
                       />
                     </div>
                   </div>
@@ -129,8 +129,8 @@ export default function Home() {
 
         {/* Previous Work Section */}
         <div
-          id="work"
-          className="absolute bottom-0 w-full bg-background z-20 text-white overflow-x-hidden"
+          id='work'
+          className='absolute bottom-0 w-full bg-background z-20 text-white overflow-x-hidden'
         >
           <ProjectGallery />
         </div>

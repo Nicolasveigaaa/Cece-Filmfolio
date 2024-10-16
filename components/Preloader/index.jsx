@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { opacity, slideUp } from "./anim";
 
-const words = ["", "Ready", "Set", "Action"];
+const words = ["", "1", "1", "2", "2", "3", "3"];
 
 export default function Index() {
   const [index, setIndex] = useState(0);
@@ -47,21 +47,21 @@ export default function Index() {
   return (
     <motion.div
       variants={slideUp}
-      initial="initial"
-      exit="exit"
+      initial='initial'
+      exit='exit'
       className={styles.introduction}
     >
       {dimension.width > 0 && (
         <>
-          <motion.p variants={opacity} initial="initial" animate="enter">
+          <motion.p variants={opacity} initial='initial' animate='enter'>
             <span></span>
             {words[index]}
           </motion.p>
           <svg>
             <motion.path
               variants={curve}
-              initial="initial"
-              exit="exit"
+              initial='initial'
+              exit='exit'
             ></motion.path>
           </svg>
         </>
