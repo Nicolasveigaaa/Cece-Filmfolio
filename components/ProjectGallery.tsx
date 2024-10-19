@@ -75,7 +75,7 @@ const cards: CardType[] = [
   {
     video: "/videoer/rød-sol.webm",
     title: "Solen er så rød mor",
-    thumbnail: "/thumbnail/rødsol.webp",
+    thumbnail: "/stilbillede/solen-rod/pic6.png",
     url: "https://www.youtube.com/watch?v=PlfcZpQwqq4",
     kategoriOgDato: "Fiction • 2021",
     description:
@@ -93,7 +93,7 @@ const cards: CardType[] = [
   {
     video: "/videoer/echo.webm",
     title: "ECHO prøver naturterapi",
-    thumbnail: "/thumbnail/echo.webp",
+    thumbnail: "/stilbillede/natur-tera/pic2.png",
     url: "https://www.youtube.com/watch?v=B1F20-hF0X8",
     kategoriOgDato: "Non-fiction • 2024",
     description:
@@ -143,11 +143,24 @@ const cards: CardType[] = [
     noVideo: false,
   },
   {
+    video: "/videoer/bg-video.webm",
+    title: "Plugin Heat Club",
+    thumbnail: "/stilbillede/plugin/pic4.png",
+    url: "https://www.youtube.com/watch?v=_E_5b-nkq4o",
+    kategoriOgDato: "Commercial, 2023",
+    description: `A short commercial for Plugin Heat Club. Linnea shares her inspiring journey from a life filled with stress and unhappiness to discovering joy and purpose through Plugin.`,
+    stilbileder: [
+      "/stilbillede/plugin/pic4.png",
+      "/stilbillede/plugin/pic3.png",
+    ],
+    noVideo: true,
+  },
+  {
     video: "/videoer/afskearm.webm",
     title: "Afskærmet",
     thumbnail: "/stilbillede/afskearm/pic7.png",
     url: "https://youtu.be/1Wc7IaYG2ps",
-    kategoriOgDato: "Non fiction, 2022",
+    kategoriOgDato: "Non-fiction, 2022",
     description: `Afskærmet is a portrait of Balder, who chooses to live outside of society. Screens don’t interest him. He would rather draw what he sees around him and feels within. He is an outsider, connected to the things most people no longer notice.`,
     stilbileder: [
       "/stilbillede/afskearm/pic1.png",
@@ -160,21 +173,6 @@ const cards: CardType[] = [
       "/stilbillede/afskearm/pic8.png",
     ],
     noVideo: false,
-  },
-  {
-    video: "/videoer/bg-video.webm",
-    title: "Plugin Heat Club",
-    thumbnail: "/stilbillede/plugin/pic4.png",
-    url: "https://www.youtube.com/watch?v=_E_5b-nkq4o",
-    kategoriOgDato: "Commerical, 2023",
-    description: `A short commercial for Plugin Heat Club. Linnea shares her inspiring journey from a life filled with stress and unhappiness to discovering joy and purpose through Plugin.`,
-    stilbileder: [
-      "/stilbillede/plugin/pic1.png",
-      "/stilbillede/plugin/pic2.png",
-      "/stilbillede/plugin/pic3.png",
-      "/stilbillede/plugin/pic4.png",
-    ],
-    noVideo: true,
   },
 ];
 

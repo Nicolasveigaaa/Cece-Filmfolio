@@ -117,7 +117,7 @@ export default function Home() {
                         linkText='Download'
                         linkTextTwo='CV'
                         linkTextThree=''
-                        linkRef='/downloadable/Celena-Veiga-CV.pdf'
+                        linkRef='/downloadable/celena-veiga-cv.pdf'
                       />
                     </div>
                   </div>
