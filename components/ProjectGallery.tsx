@@ -41,7 +41,7 @@ const cards: CardType[] = [
     video: "/videoer/bg-video.webm",
     title: "I Vor Dødstime",
     thumbnail: "/thumbnail/dødstime.webp",
-    url: "https://www.youtube.com/watch?v=3SLHMSmBB_w",
+    url: "https://www.ekkofilm.dk/shortlist/film/i-vor-ddstime-/",
     kategoriOgDato: "Fiction • 2024",
     description: `In The Hour Of Death" follows Eva on her way to her sister Ester’s funeral, as she is triggered by memories from her childhood that reveal why she left her beloved sick sister behind. Raised in isolation under strict rules and unwavering faith, Eva's beliefs are tested as her older sister Ester becomes ill and loses her faith in God. Eva is faced with deep fear as she contemplates the possibility of not reuniting with Ester in heaven when they die. Eva's journey unveils the complexities between doubt and devotion to faith. "In The Hour Of Death" delves into the fear of losing loved ones and the uncertainty of afterlife, illustrating how facing death can deepen our appreciation for life and reshape our beliefs.`,
     stilbileder: [
