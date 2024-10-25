@@ -94,25 +94,25 @@ export default function Home() {
                           - Through visual storytelling that appeals to
                           universal emotions, I aspire to unite people and erase
                           feelings of loneliness. My mission is to create
-                          authentic, inclusive and sensuous stories that
-                          celebrate diversity and challenge the norm, leaving a
-                          positive, lasting impact.
+                          authentic and inclusive stories that celebrate
+                          diversity and challenge the norm, leaving a positive,
+                          lasting impact.
                         </p>
 
                         <p>
-                          I am a visually-minded storyteller with excellent
-                          communication skills and a good sense for connecting
-                          with people on a deeper level. Always being eager to
-                          improve and develop, I am certainly not afraid to dig
-                          deep and search for new, uncomfortable, beautiful and
-                          sometimes hurtful places with my work, as I strongly
-                          believe these places to be the origin of the greatest
-                          stories.
+                          I am a visually-minded storyteller with a strong
+                          ability to connect with people on a deeper level,
+                          always eager to improve and develop. I am not afraid
+                          to dig deep and explore new and uncomfortable places
+                          with my work, as I believe these are the origins of
+                          the greatest stories.
                         </p>
                       </div>
                     </div>
 
+                    {/*
                     <div className='text-base mt-10 2xl:mt-20'>
+                      
                       <LinkRotate
                         linkText='Download'
                         linkTextTwo='CV'
@@ -120,6 +120,7 @@ export default function Home() {
                         linkRef='/downloadable/celena-veiga-cv.pdf'
                       />
                     </div>
+                    */}
                   </div>
                 </div>
               </div>

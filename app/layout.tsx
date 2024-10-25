@@ -10,13 +10,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Celena Veiga — Filmfolio",
   description:
-    "A film gallery showing some of the danish filminstructor Celena Veiga's previous Projects.",
+    "A film gallary showing some of the Danish storyteller Celena Veiga’s work.",
 };
 
 // SEO Optimization
 <meta
-  name="keywords"
-  content="Filmdirector, Screenwriter, Storyteller, Celena, Celena Veiga, Veiga, Danish Filmdirector, Videojournalist, Danish Screenwriter, Danish Storyteller, Copenhagen, Celena Faustino Sousa Veiga"
+  name='keywords'
+  content='Filmdirector, Screenwriter, Storyteller, Celena, Celena Veiga, Veiga, Danish Filmdirector, Videojournalist, Danish Screenwriter, Danish Storyteller, Copenhagen, Celena Faustino Sousa Veiga'
 />;
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={inter.className}>
         <SmoothScrolling>
           <Header />
